@@ -54,10 +54,7 @@ var htmltemplate=`<html>
       </div>
      </div>
   </body>
-    
-    
-    
-</html>
+  </html>
 `;
 return htmltemplate;
 }
