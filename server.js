@@ -5,21 +5,39 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone={
-    title:'Article one | chetna',
-    heading:'Article one',
-    date: 'Aug 8, 2017',
-    content:`<p>
-              This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
-          </p>
+var articles ={
+    article-one:{
+        title:'Article one | chetna',
+        heading:'Article one',
+        date: 'Aug 8, 2017',
+        content:`<p>
+                  This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
+              </p>
+              
+              <p>
+                  This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
+              </p>
           
-          <p>
-              This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
-          </p>
-          
-          <p>
-              This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
-          </p>`
+              <p>
+                  This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
+              </p>`
+    },
+    article-two:{
+        title:'Article two | chetna',
+        heading:'Article two',
+        date: 'Aug 10, 2017',
+        content:`<p>
+                  This is my content for article two
+              </p>`
+    },
+    article-three: {
+        title:'Article three | chetna',
+        heading:'Article three',
+        date: 'Aug 12, 2017',
+        content:`<p>
+                  This is my content for article three
+              </p>`
+    }
 };
 
 function createtemplate(data)
@@ -64,8 +82,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
- res.send(createtemplate(articleone));
+app.get('/:articlename', function (req, res) {
+    var articlename=req.params.articlename;
+ res.send(createtemplate(articles(articlename)));
 });
 
 app.get('/article-two', function (req, res) {
