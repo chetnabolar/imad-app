@@ -29,7 +29,7 @@ function createtemplate(data)
     var date=data.date;
     var content=data.content;
     
-var htmlcontent=`<html>
+var htmltemplate=`<html>
   <head>
       <title>
          ${title}
