@@ -6,21 +6,21 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles ={
-    article-one:{
-        title:'Article one | chetna',
-        heading:'Article one',
-        date: 'Aug 8, 2017',
-        content:`<p>
-                  This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
-              </p>
+        article-one:{
+            title:'Article one | chetna',
+            heading:'Article one',
+            date: 'Aug 8, 2017',
+            content:`<p>
+                      This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
+                  </p>
+                  
+                  <p>
+                      This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
+                  </p>
               
-              <p>
-                  This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
-              </p>
-          
-              <p>
-                  This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
-              </p>`
+                  <p>
+                      This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.This is my content for article one.
+                  </p>`
     },
     article-two:{
         title:'Article two | chetna',
